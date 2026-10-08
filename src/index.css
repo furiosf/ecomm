@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --animate-cart-bump: cart-bump 0.6s ease-in-out;
+  --animate-fade-up: fade-up 0.35s ease-out both;
+  --animate-heart-pop: heart-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  @keyframes heart-pop { 0% { transform: scale(.4); } 60% { transform: scale(1.35); } 100% { transform: scale(1); } }
+  @keyframes cart-bump { 0% { transform: scale(1) rotate(0deg); } 30% { transform: scale(1.4) rotate(-10deg); } 60% { transform: scale(.9) rotate(6deg); } 100% { transform: scale(1) rotate(0deg); } }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+}
+
+@utility no-scrollbar { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #fff8fc;
+  color: #475569;
+}
+button, a, input { -webkit-tap-highlight-color: transparent; }
+
+/* Simple pastel café styling. */
+.chijeu-card { border: 1px solid #eadcf2; background: #ffffff; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
